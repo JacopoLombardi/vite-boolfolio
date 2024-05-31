@@ -1,12 +1,14 @@
 
 <script>
-import axios from 'axios'
-import{store} from './data/store.js'
+  import axios from 'axios'
+  import{store} from './data/store.js'
+
 
   export default {
     data(){
       return{
-        
+        projects: [],
+        loading: true,
       }
     },
 
@@ -16,10 +18,12 @@ import{store} from './data/store.js'
         axios.get(store.apiUrl)
         .then(result =>{
           console.log(result.data)
-          // this.projects = result.data;
+          this.loading = false
+          this.projects = result.data
         })
         .catch(error =>{
           console.log(error.message)
+          this.loading = false
         })
       }
     },
@@ -36,9 +40,32 @@ import{store} from './data/store.js'
 
 
 <template>
-  <div class="container_">
-
+  <div class="d-flex flex-column align-items-center mt-5">
     <h1>My Portfolio</h1>
+
+
+    <!-- loading -->
+    <div
+      v-if="(loading)"
+    >
+      <p class="fs-1 fw-semibold mt-5">Loading....</p>
+    </div>
+    
+
+    <!-- project -->
+    <div 
+      v-else
+      class="mt-5"
+    >
+      <ul class="list-unstyled fs-5">
+        <li
+          v-for="project in projects"
+          :key="project.id"
+          >
+          {{ project.id }} {{ project.title }}
+        </li>
+      </ul>
+    </div>
 
   </div>
 </template>
