@@ -3,8 +3,13 @@
   import axios from 'axios'
   import{store} from './data/store.js'
 
+  import ProjectCard from './components/ProjectCard.vue'
 
   export default {
+    components:{
+      ProjectCard
+    },
+
     data(){
       return{
         projects: [],
@@ -57,20 +62,30 @@
       v-else
       class="mt-5"
     >
-      <ul class="list-unstyled fs-5">
-        <li
-          v-for="project in projects"
-          :key="project.id"
-          >
-          {{ project.id }} {{ project.title }}
+      <ul class="list-unstyled">
+        <li class="fs-5">
+
+          <ProjectCard
+            v-for="project in projects"
+            :key="project.id"
+
+            :ProjectObj="project"
+          />
+
         </li>
       </ul>
     </div>
-
+    
   </div>
 </template>
 
 
+<!-- <li
+  v-for="project in projects"
+  :key="project.id"
+  >
+  {{ project.id }} {{ project.title }}
+</li> -->
 
 
 
