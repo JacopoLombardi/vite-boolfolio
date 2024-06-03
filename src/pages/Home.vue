@@ -1,42 +1,60 @@
 
 <script>
-  import axios from 'axios'
-  import{store} from '../data/store.js'
+   import axios from 'axios'
+   import{store} from '../data/store.js'
 
-  import ProjectCard from '../components/ProjectCard.vue'
+   import ProjectCard from '../components/ProjectCard.vue'
 
-  export default {
-    components:{
-      ProjectCard
-    },
+   export default {
+      components:{
+         ProjectCard
+      },
 
-    data(){
-      return{
-        projects: [],
-        loading: true,
-      }
-    },
+      data(){
+         return{
+            projects: [],
+            types: [],
+            technologies: [],
+            loading: true,
+         }
+      },
 
 
     methods:{
-      getApi(){
-        axios.get(store.apiUrl)
-        .then(result =>{
-          console.log(result.data)
-          this.loading = false
-          this.projects = result.data
-        })
-        .catch(error =>{
-          console.log(error.message)
-          this.loading = false
+      getApi(apiUrl, type = ''){
+         axios.get(apiUrl + type)
+            .then(result =>{
+
+               // switch oppure if else
+               switch (type){
+                  case 'types':
+                     console.log(result.data)
+                     this.types = result.data
+                     break
+                  case 'technologies':
+                     console.log(result.data)
+                     this.technologies = result.data
+                     break
+                  default:
+                     console.log(result.data)
+                     this.loading = false
+                     this.projects = result.data
+               }
+         })
+
+         .catch(error =>{
+            console.log(error.message)
+            this.loading = false
          })
       }
     },
 
 
-    mounted(){
-      this.getApi();
-    }
+   mounted(){
+      this.getApi(store.apiUrl, 'projects');
+      this.getApi(store.apiUrl, 'types');
+      this.getApi(store.apiUrl, 'technologies');
+   }
   }
 </script>
 
@@ -86,11 +104,15 @@
             <div class="badge_type text-center">
                <label class="fw-semibold fs-4 mb-2">Type</label>
                <div>
-                  <span class="badge text-bg-primary mx-2">aaa</span>
-                  <span class="badge text-bg-primary mx-2">aaa</span>
-                  <span class="badge text-bg-primary mx-2">aaa</span>
-                  <span class="badge text-bg-primary mx-2">aaa</span>
-                  <span class="badge text-bg-primary mx-2">aaa</span>
+
+                  <span 
+                    v-for="type in types"
+                    :key="type.id"
+                    class="badge text-bg-primary mx-2"
+                  >
+                     {{ type.name }}
+                  </span>
+                  
                </div>
             </div>
 
@@ -98,10 +120,13 @@
             <div class="badge_type text-center">
                <label class="fw-semibold fs-4 mb-2">Technology</label>
                <div>
-                  <span class="badge text-bg-primary mx-2">bbbb</span>
-                  <span class="badge text-bg-primary mx-2">bbbb</span>
-                  <span class="badge text-bg-primary mx-2">bbbb</span>
-                  <span class="badge text-bg-primary mx-2">bbbb</span>
+                  <span 
+                    v-for="technology in technologies"
+                    :key="technology.id"
+                    class="badge text-bg-primary mx-2"
+                  >
+                     {{ technology.name }}
+                  </span>
                </div>
             </div>
 
