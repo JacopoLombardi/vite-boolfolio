@@ -1,4 +1,4 @@
-
+<!-- 
 <script>
   import axios from 'axios'
   import{store} from './data/store.js'
@@ -29,7 +29,7 @@
         .catch(error =>{
           console.log(error.message)
           this.loading = false
-        })
+         })
       }
     },
 
@@ -93,4 +93,4 @@
 
 
 
-</style>
+</style> --> -->
