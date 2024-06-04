@@ -26,7 +26,7 @@
 <template>
    <div>
 
-      <p>{{ ProjectObj.id }}  {{ ProjectObj.title }}</p>
+      <p>{{ ProjectObj.id }} <router-link :to="{ name: 'projectDetail', params:{slug: ProjectObj.slug}}">{{ ProjectObj.title }}</router-link> </p>
 
    </div>
 </template>
@@ -38,5 +38,13 @@
 
 
 <style lang="scss" scoped>
+
+a{
+   text-decoration: none;
+   color: white;
+   &:hover{
+      text-decoration: underline;
+   }
+}
 
 </style>
