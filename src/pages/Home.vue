@@ -101,7 +101,7 @@
 
          <div>
             <!-- Type -->
-            <div class="badge_type text-center">
+            <div class="badge_box text-center">
                <label class="fw-semibold fs-4 mb-2">Type</label>
                <div>
 
@@ -117,7 +117,7 @@
             </div>
 
             <!-- Technology -->
-            <div class="badge_type text-center">
+            <div class="badge_box text-center">
                <label class="fw-semibold fs-4 mb-2">Technology</label>
                <div>
                   <span 
@@ -143,5 +143,16 @@
 
 
 <style lang="scss" scoped>
+
+
+.badge_box{
+   max-width: 300px;
+   aspect-ratio: 1;
+   .badge{
+      font-size: 15px;
+      margin-top: 10px;
+   }
+}
+
 
 </style>
