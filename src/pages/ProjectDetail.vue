@@ -58,13 +58,14 @@
 
 <template>
 
+   <!-- Loader -->
    <div
      v-if="loading" 
    >
       Loading...
    </div>
 
-
+   <!-- Project -->
    <div
      v-else
    >
