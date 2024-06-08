@@ -70,13 +70,13 @@
      v-else
    >
       <div class="container text text-center my-5">
-         <h1>Dettaglio Project</h1>
+         <h1>{{ project.title }}</h1>
       </div>
 
       <div>
-         <h2>{{ project.title }}</h2>
-         <label class="fw-semibold  fs-4 mt-3">decrizione:</label>
-         <p class="w-25">{{ project.description }}</p>
+         <h2><a :href="`${project.link}`" target="_blank">visualizza il sito web</a></h2>
+         <label class="fw-semibold  fs-4 mt-5">decrizione:</label>
+         <p class="fs-5 w-50">{{ project.description }}</p>
 
          <div class="badge_box mt-5">
             <label class="fw-semibold  fs-4 me-3">Techonologies:</label>
@@ -100,6 +100,8 @@
 
 <style lang="scss" scoped>
 
-
+h1{
+   font-size: 60px;
+}
 
 </style>

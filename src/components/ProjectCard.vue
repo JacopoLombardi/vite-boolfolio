@@ -26,7 +26,7 @@
 <template>
    <div>
 
-      <p>{{ ProjectObj.id }} <router-link :to="{ name: 'projectDetail', params:{slug: ProjectObj.slug}}">{{ ProjectObj.title }}</router-link> </p>
+      <p>- <router-link :to="{ name: 'projectDetail', params:{slug: ProjectObj.slug}}">{{ ProjectObj.title }}</router-link> </p>
 
    </div>
 </template>

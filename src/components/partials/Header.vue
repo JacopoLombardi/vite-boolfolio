@@ -8,7 +8,7 @@
 
 
 <template>
-   <header>
+   <header class="border-bottom pb-4">
       <nav>
         <router-link :to="{name: 'home'}">Home</router-link>
         <router-link :to="{name: 'about'}">About</router-link>

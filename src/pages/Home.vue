@@ -84,7 +84,7 @@
          <div 
             class="mt-5 me-7"
          >
-            <label class="fw-semibold fs-4 mb-2">Project</label>
+            <label class="fw-bold text-uppercase fs-4 mb-2">Projects</label>
             <ul class="list-unstyled">
                <li class="fs-5">
       
@@ -101,8 +101,8 @@
 
          <div>
             <!-- Type -->
-            <div class="badge_box text-center">
-               <label class="fw-semibold fs-4 mb-2">Type</label>
+            <div class="badge_box text-center mt-5">
+               <label class="fw-bold text-uppercase fs-4 mb-2">Type</label>
                <div>
 
                   <span 
@@ -118,7 +118,7 @@
 
             <!-- Technology -->
             <div class="badge_box text-center">
-               <label class="fw-semibold fs-4 mb-2">Technology</label>
+               <label class="fw-bold text-uppercase fs-4 mb-2">Technology</label>
                <div>
                   <span 
                     v-for="technology in technologies"

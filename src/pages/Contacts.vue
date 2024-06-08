@@ -8,9 +8,9 @@
 
       data(){
          return{
-            name: 'jacopo',
-            email: 'jacopo@gmail.com',
-            message: 'lorem ipsummmmmmm',
+            name: '',
+            email: '',
+            message: '',
 
             errors:{
                name: '',
