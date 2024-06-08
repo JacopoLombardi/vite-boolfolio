@@ -84,7 +84,7 @@
          <div 
             class="mt-5 me-7"
          >
-            <label class="fw-bold text-uppercase fs-4 mb-2">Projects</label>
+            <label class="fw-bold text-uppercase fs-4 mb-2">Best Projects</label>
             <ul class="list-unstyled">
                <li class="fs-5">
       

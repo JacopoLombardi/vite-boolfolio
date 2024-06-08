@@ -62,7 +62,7 @@
    <div
      v-if="loading" 
    >
-      Loading...
+      <p class="fs-1 fw-semibold mt-5">Loading....</p>
    </div>
 
    <!-- Project -->

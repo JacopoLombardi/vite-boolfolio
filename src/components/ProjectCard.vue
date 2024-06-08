@@ -41,7 +41,9 @@
 
 a{
    text-decoration: none;
-   color: black;
+   color: rgb(23, 0, 154);
+   font-weight: 600;
+   font-size: 26px;
    &:hover{
       text-decoration: underline;
    }
